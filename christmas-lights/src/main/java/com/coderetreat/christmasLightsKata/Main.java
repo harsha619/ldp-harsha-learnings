@@ -7,7 +7,6 @@ public class Main {
 
     public static void main(String[] args) {
         ChristmasLightsImpl christmasLights;
-        IChristmasLights iCountLights;
         String[] instructions = {
                 "turn on 887,9 through 959,629",
                 "turn on 454,398 through 844,448",
@@ -22,7 +21,7 @@ public class Main {
         christmasLights = new ChristmasLightsImpl(1000);
         christmasLights.executeInstructions(instructions);
 
-        System.out.println(christmasLights.countNoOfLightsOn());
+        System.out.println("total no of lights on = "+christmasLights.countNoOfLightsOn());
     }
 
 }
