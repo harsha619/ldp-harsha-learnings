@@ -1,8 +1,12 @@
 package com.coderetreat.telemetry;
 
 public class DiagnosticControllerImpl extends  DiagnosticImpl{
-    public  DataSender  dataSender;
-    public  StatusProvider statusProvider;
+    private   DataChannel  dataChannel;
+    private   StatusProvider statusProvider;
+    public  DiagnosticControllerImpl(){
+        statusProvider= new TelemetryStatusImpl();
+        dataChannel= new TelemetryClientDataImpl();
+    }
     private final String DiagnosticChannelConnectionString = "*111#";
     private String diagnosticInfo = "";
     public void checkTransmission() throws Exception
@@ -23,7 +27,7 @@ public class DiagnosticControllerImpl extends  DiagnosticImpl{
             throw new Exception("Unable to connect.");
         }
 
-        dataSender.send(TelemetryClientDataImpl.DIAGNOSTIC_MESSAGE);
-        diagnosticInfo = dataSender.receive();
+        dataChannel.send(TelemetryClientDataImpl.DIAGNOSTIC_MESSAGE);
+        diagnosticInfo = dataChannel.receive();
     }
 }

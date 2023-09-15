@@ -2,7 +2,7 @@ package com.coderetreat.telemetry;
 
 import java.util.Random;
 
-public class TelemetryClientDataImpl implements  DataSender{
+public class TelemetryClientDataImpl implements  DataChannel{
     public static final String DIAGNOSTIC_MESSAGE = "AT#UD";
 
     private String diagnosticMessageResult = "";

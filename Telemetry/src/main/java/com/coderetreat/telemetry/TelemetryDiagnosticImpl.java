@@ -4,9 +4,12 @@ public class TelemetryDiagnosticImpl {
     private final String DiagnosticChannelConnectionString = "*111#";
     private String diagnosticInfo = "";
 
-    public  DataSender  dataSender;
-    public  StatusProvider statusProvider;
-
+    private   DataChannel  dataChannel;
+    private   StatusProvider statusProvider;
+    public  TelemetryDiagnosticImpl(){
+        statusProvider= new TelemetryStatusImpl();
+        dataChannel= new TelemetryClientDataImpl();
+    }
 
     public void checkTransmission() throws Exception
     {
@@ -26,7 +29,7 @@ public class TelemetryDiagnosticImpl {
             throw new Exception("Unable to connect.");
         }
 
-        dataSender.send(TelemetryClientDataImpl.DIAGNOSTIC_MESSAGE);
-        diagnosticInfo = dataSender.receive();
+        dataChannel.send(TelemetryClientDataImpl.DIAGNOSTIC_MESSAGE);
+        diagnosticInfo = dataChannel.receive();
     }
 }
