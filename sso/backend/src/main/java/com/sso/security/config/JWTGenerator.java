@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import io.jsonwebtoken.Jwts;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,9 +20,12 @@ public class JWTGenerator {
 
     @Value("${jwt.message}")
     private String message;
+
     public Map<String, String> generateToken(LoginDTO loginDTO) {
-        String jwtToken="";
-        jwtToken = Jwts.builder().setSubject(loginDTO.getEmail()).setIssuedAt(new Date()).setExpiration(new Date(System.currentTimeMillis() + 43200000)).signWith(SignatureAlgorithm.HS256, "secret").compact();
+        String jwtToken = "";
+        jwtToken = Jwts.builder().setSubject(loginDTO.getEmail()).setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis() + 43200000))
+                .signWith(SignatureAlgorithm.HS256, "secret").compact();
         Map<String, String> jwtTokenGen = new HashMap<>();
         jwtTokenGen.put("token", jwtToken);
         jwtTokenGen.put("message", message);
