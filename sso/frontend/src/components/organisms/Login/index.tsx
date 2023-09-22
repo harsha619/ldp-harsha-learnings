@@ -73,6 +73,7 @@ export const Login = () => {
                 },
               });
             }}
+            variant="contained"
           >
             Google login
           </Button>
