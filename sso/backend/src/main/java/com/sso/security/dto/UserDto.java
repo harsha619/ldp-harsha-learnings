@@ -1,6 +1,7 @@
 package com.sso.security.dto;
 
 
+import com.sso.security.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,13 +31,13 @@ public class UserDto {
         modelMapper = new ModelMapper();
     }
 
-    public static Users convertDtoToEntity(UsersDTO usersDTO){
+    public static User convertDtoToEntity(UserDto UserDTO){
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
-        return modelMapper.map(usersDTO, Users.class);
+        return modelMapper.map(UserDTO, User.class);
     }
-    public static UsersDTO convertEntityToDto(Users users) {
+    public static UserDto convertEntityToDto(User User) {
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
-        return modelMapper.map(users, UsersDTO.class);
+        return modelMapper.map(User, UserDto.class);
     }
 
 }

@@ -5,7 +5,7 @@ import com.sso.security.dto.UserDto;
 
 public interface UserService {
     UserDto save(UserDto user);
-    UserDto findUser(Long id);
+    UserDto findUser(Integer id);
     UserDto getUserByEmailAndPassword(LoginDTO loginDTO);
 
 }

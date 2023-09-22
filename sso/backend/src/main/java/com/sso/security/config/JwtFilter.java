@@ -26,8 +26,12 @@ public class JwtFilter extends GenericFilterBean {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)
             throws IOException, ServletException {
+
         final HttpServletRequest request = (HttpServletRequest) servletRequest;
         final HttpServletResponse response = (HttpServletResponse) servletResponse;
+        response.setHeader("Access-Control-Allow-Origin", "http://localhost:8080");
+        response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, PATCH");
+        response.setHeader("Access-Control-Allow-Headers", "Origin, Content-Type, X-Auth-Token");
         final String requestURI = request.getRequestURI();
 
         if (isExcluded(requestURI)) {

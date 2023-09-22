@@ -8,7 +8,9 @@ import org.springframework.context.annotation.Configuration;
 public class JwtFilterConfig {
     @Bean
     public FilterRegistrationBean<JwtFilter> jwtFilter() {
+        System.out.println("jwtt token");
         FilterRegistrationBean filter= new FilterRegistrationBean();
+
         filter.setFilter(new JwtFilter());
         filter.addUrlPatterns("/users/*");
         filter.addInitParameter("exclusions", "/users/save/*,/users/login/*");

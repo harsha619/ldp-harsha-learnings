@@ -5,6 +5,13 @@ spring:
     url: jdbc:mysql://localhost:3306/sso_integration?user=root
     userName: root
     password: sql1@
+  globalcors:
+    corsConfigurations:
+      '[/**]':
+        allowedOrigins: "*"
+        allowedHeaders: "*"
+        allowedMethods: "*"
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -12,3 +19,6 @@ spring:
       properties:
         hibernate:
           format_sql: true
+Jwt:
+  secret: "eafdhgjhj"
+  message: 'Logged in Successfully'

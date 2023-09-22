@@ -5,10 +5,12 @@ import com.sso.security.dto.UserDto;
 import com.sso.security.entity.User;
 import com.sso.security.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-public class UserServiceImpl {
+@Service
+public class UserServiceImpl implements UserService{
 
     @Autowired
     UserRepository userRepository;
@@ -19,7 +21,7 @@ public class UserServiceImpl {
     }
 
     @Override
-    public UserDto findUser(Long id) {
+    public UserDto findUser(Integer id) {
         Optional<User> theUser = userRepository.findById(id);
         return theUser.map(UserDto::convertEntityToDto).orElse(null);
     }
