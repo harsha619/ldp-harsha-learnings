@@ -13,10 +13,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
 
 
-@CrossOrigin(origins = {"http://localhost:8080"}, methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE,RequestMethod.PUT,RequestMethod.PATCH,})
-
 @RestController
 @RequestMapping("/users")
+@CrossOrigin(origins = {"*"}, methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE,RequestMethod.PUT,RequestMethod.PATCH,})
+
 public class UserController {
 
     @Autowired
@@ -32,13 +32,13 @@ public class UserController {
 
     @PostMapping("/login")
     public ResponseEntity<?> loginUser(@RequestBody LoginDTO loginDTO) {
-        System.out.println("login dto controller");
         try {
             if(loginDTO.getEmail() == null || loginDTO.getPassword() == null) {
                 throw new RuntimeException("UserName or Password is Empty");
             }
-            System.out.println(loginDTO);
+            System.out.println(loginDTO.getEmail()+"* *" +loginDTO.getPassword());
             UserDto userData = userService.getUserByEmailAndPassword(loginDTO);
+            System.out.println(userData.getEmail()+"* *" +loginDTO.getPassword());
             if(userData == null){
                 throw new RuntimeException("UserName or Password is Invalid");
             }

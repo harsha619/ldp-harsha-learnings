@@ -28,8 +28,10 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public UserDto getUserByEmailAndPassword(LoginDTO loginDTO) {
-        Optional<User> user = userRepository.findByEmailAndPassword(loginDTO.getEmail(),loginDTO.getPassword());
+        System.out.println("log"+loginDTO.getEmail()+"pass"+loginDTO.getPassword());
+        Optional<User> user = userRepository.findByEmail(loginDTO.getEmail());
         if(user.isEmpty()){
+            System.out.println("throw serv");
             throw new RuntimeException("Invalid email and password");
         }
         return UserDto.convertEntityToDto(user.get());

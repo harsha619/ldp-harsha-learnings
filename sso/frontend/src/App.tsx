@@ -23,7 +23,9 @@ const App = () => {
           <Route path="/" element={<Login />} />
           <Route
             path="/dashboard"
-            element={isAuthenticated ? <DashboardPage /> : <Navigate to="/" />}
+            element={
+              isAuthenticated || token ? <DashboardPage /> : <Navigate to="/" />
+            }
           />
         </Routes>
       </BrowserRouter>
