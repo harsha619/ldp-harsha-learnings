@@ -36,9 +36,7 @@ public class UserController {
             if(loginDTO.getEmail() == null || loginDTO.getPassword() == null) {
                 throw new RuntimeException("UserName or Password is Empty");
             }
-            System.out.println(loginDTO.getEmail()+"* *" +loginDTO.getPassword());
             UserDto userData = userService.getUserByEmailAndPassword(loginDTO);
-            System.out.println(userData.getEmail()+"* *" +loginDTO.getPassword());
             if(userData == null){
                 throw new RuntimeException("UserName or Password is Invalid");
             }

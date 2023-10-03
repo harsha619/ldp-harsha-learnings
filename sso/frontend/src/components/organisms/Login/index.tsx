@@ -17,16 +17,8 @@ export const Login = () => {
     setInputValues((prev) => ({ ...prev, [name]: value }));
   };
   const token = localStorage.getItem('token');
-  const isMyTokenExpired = isExpired(token!);
-  const { loginWithRedirect, isAuthenticated } = useAuth0();
+  const { loginWithRedirect } = useAuth0();
   const navigate = useNavigate();
-  useEffect(() => {
-    if (!isMyTokenExpired) navigate('/dashboard');
-  }, []);
-
-  useEffect(() => {
-    if (isAuthenticated) navigate('/dashboard');
-  }, [isAuthenticated, navigate]);
 
   return (
     <div>
@@ -52,9 +44,8 @@ export const Login = () => {
               console.log(inputValues, 'd');
 
               authenticateUser({ ...inputValues }).then((res) => {
-                console.log(res.data.token, 'a');
-
-                localStorage.setItem('token', res.token);
+                localStorage.setItem('token', res.data.token);
+                navigate('/dashboard');
               });
             }}
           >

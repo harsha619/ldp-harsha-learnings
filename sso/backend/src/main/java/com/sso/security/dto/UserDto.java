@@ -24,20 +24,5 @@ public class UserDto {
     String department;
     String role;
 
-    @Autowired
-    private static ModelMapper modelMapper;
-
-    static{
-        modelMapper = new ModelMapper();
-    }
-
-    public static User convertDtoToEntity(UserDto UserDTO){
-        modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
-        return modelMapper.map(UserDTO, User.class);
-    }
-    public static UserDto convertEntityToDto(User User) {
-        modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
-        return modelMapper.map(User, UserDto.class);
-    }
 
 }

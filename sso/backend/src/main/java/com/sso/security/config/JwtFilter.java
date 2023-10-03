@@ -49,9 +49,9 @@ public class JwtFilter extends GenericFilterBean {
             filterChain.doFilter(request, response);
         }
     }
-
     private boolean isExcluded(String requestURI) {
         AntPathMatcher pathMatcher = new AntPathMatcher();
         return pathMatcher.match("/users/login/**", requestURI) || pathMatcher.match("/users/save/**", requestURI);
     }
+
 }

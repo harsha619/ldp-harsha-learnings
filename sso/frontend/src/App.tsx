@@ -4,17 +4,11 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { isExpired } from 'react-jwt';
 import { useAuth0 } from '@auth0/auth0-react';
+import useAuthToken from 'hooks/AuthToken';
 
 const App = () => {
   const { isAuthenticated } = useAuth0();
-  const [token, setToken] = useState<string>('');
-  useEffect(() => {
-    const token: string = localStorage.getItem('token')!;
-    setToken(token);
-  }, [token, isAuthenticated]);
-  function isExpired(token: any) {
-    throw new Error('Function not implemented.');
-  }
+  const token = useAuthToken();
 
   return (
     <div>
