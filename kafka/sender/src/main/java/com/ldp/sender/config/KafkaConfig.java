@@ -11,11 +11,11 @@ import static com.ldp.sender.constant.AppConstants.MESSAGE_TOPIC;
 public class KafkaConfig {
 
 
-@Bean
-    public NewTopic topic(){
+    @Bean
+    public NewTopic topic() {
         return TopicBuilder
                 .name(MESSAGE_TOPIC)
-                .partitions(3)
+                .partitions(10)
                 .build();
     }
 }
