@@ -5,8 +5,6 @@ import com.example.mongodb.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,37 +17,32 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/create")
-    public User saveUser ( @RequestBody User user){
-        System.out.println("into controller");
-        User savedUser= userService.createUser(user);
-        System.out.println("cont"+savedUser.getId());
-         return  savedUser;
-
+    public ResponseEntity<User> saveUser(@RequestBody User user) {
+        User savedUser = userService.createUser(user);
+        return new ResponseEntity<>(savedUser, HttpStatus.CREATED);
     }
+
     @GetMapping("/get-by-id/{id}")
-    public User getUser ( @PathVariable String id){
-        System.out.println("into controller");
-        User savedUser= userService.getById(id);
-        System.out.println("cont"+savedUser.getId());
-        return  savedUser;
-
+    public ResponseEntity<User> getUser(@PathVariable String id) {
+        User savedUser = userService.getById(id);
+        return new ResponseEntity<>(savedUser, HttpStatus.OK);
     }
+
     @GetMapping("/all")
-    public List<User> getAllUsers(){
-        return userService.getAllUsers();
+    public ResponseEntity<List<User>> getAllUsers() {
+        List<User> allUsers = userService.getAllUsers();
+        return new ResponseEntity<>(allUsers, HttpStatus.OK);
     }
 
     @PutMapping("/update")
-    public ResponseEntity<User> updateUser(@RequestBody User user){
-        User updatedUser= userService.updateUser(user);
-        ResponseEntity<User> userResponse= new ResponseEntity<User>(user, HttpStatus.CREATED);
-        return    userResponse;
+    public ResponseEntity<User> updateUser(@RequestBody User user) {
+        User updatedUser = userService.updateUser(user);
+        return new ResponseEntity<>(updatedUser, HttpStatus.OK);
     }
 
     @DeleteMapping("/remove/{id}")
-    public  ResponseEntity<String> removeUser(@PathVariable String id){
-        String message= userService.deleteUserById(id);
-        ResponseEntity<String> userResponse= new ResponseEntity<String>(message, HttpStatus.CREATED);
-        return    userResponse;
+    public ResponseEntity<String> removeUser(@PathVariable String id) {
+        String message = userService.deleteUserById(id);
+        return new ResponseEntity<>(message, HttpStatus.OK);
     }
 }
