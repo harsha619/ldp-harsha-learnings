@@ -1,30 +1,30 @@
 import { Dependencies, RobotEyes, RobotHands } from "./Robot";
 import data from "../../fixtures/example.json";
 
-export default class ItemCardRobot {
-  private itemCartRobotHands = new ItemCartRobotHands();
-  private itemCartRobotEyes = new ItemCartRobotEyes();
-  private itemCartRobotDependency = new ItemCardDependency();
+export default class OrderItemRobot {
+  private orderItemRobotHands = new OrderItemRobotHands();
+  private orderItemRobotEyes = new OrderItemRobotEyes();
+  private orderItemRobotDependency = new OrderItemDependency();
 
-  public itemCard() {
-    this.itemCartRobotEyes.assertItemTitleId();
-    this.itemCartRobotDependency.printItemDetails();
+  public getItemDetails() {
+    this.orderItemRobotEyes.assertItemTitleId();
+    this.orderItemRobotDependency.printItemDetails();
   }
 
-  public addToCart() {
-    this.itemCartRobotEyes.assertAddToCartButton();
-    this.itemCartRobotHands.clickOnCartButton();
+  public addItemToCart() {
+    this.orderItemRobotEyes.assertAddToCartButton();
+    this.orderItemRobotHands.clickOnCartButton();
 
-    this.itemCartRobotDependency.waitForCart();
-    this.itemCartRobotHands.clickOnCartButtonOnReview();
+    this.orderItemRobotDependency.waitForCart();
+    this.orderItemRobotHands.clickOnCartButtonOnReview();
   }
-  public checkQuantityInShoppingCart() {
-    this.itemCartRobotDependency.printProductTitle();
-    this.itemCartRobotEyes.assertMinimumValueIn();
+  public checkItemQuantityInCart() {
+    this.orderItemRobotDependency.printProductTitle();
+    this.orderItemRobotEyes.assertMinimumValueIn();
   }
 }
 
-export class ItemCardDependency extends Dependencies {
+export class OrderItemDependency extends Dependencies {
   printItemDetails() {
     this.logTextById("productTitle");
   }
@@ -35,7 +35,7 @@ export class ItemCardDependency extends Dependencies {
     this.waitForDomContainText("attach-view-cart-button-form", 60000);
   }
 }
-export class ItemCartRobotEyes extends RobotEyes {
+export class OrderItemRobotEyes extends RobotEyes {
   assertItemTitleId() {
     this.seesIdVisible("productTitle");
   }
@@ -51,7 +51,7 @@ export class ItemCartRobotEyes extends RobotEyes {
   }
 }
 
-export class ItemCartRobotHands extends RobotHands {
+export class OrderItemRobotHands extends RobotHands {
   clickOnDropDown() {
     this.changeDropDown("quantity", 0);
   }

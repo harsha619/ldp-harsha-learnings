@@ -1,32 +1,32 @@
 import { Dependencies, RobotEyes, RobotHands } from "./Robot";
 import data from "../../fixtures/example.json";
 
-export default class MobileRobot {
-  private mobilesRobotHands = new MobileRobotHands();
-  private mobilesRobotEyes = new MobileRobotEyes();
-  private mobileDependency = new MobileDependency();
+export default class ProductRobot {
+  private productRobotHands = new ProductRobotHands();
+  private productRobotEyes = new ProductRobotEyes();
+  private productDependency = new ProductDependency();
 
   public searchMobiles() {
-    this.mobilesRobotEyes.assertSearchBar();
-    this.mobilesRobotHands.searchForMobiles();
-    this.mobilesRobotEyes.assertSearchIcon();
-    this.mobilesRobotHands.clickOnSearch();
-    this.mobilesRobotEyes.assertMobileSearchWord();
+    this.productRobotEyes.assertSearchBar();
+    this.productRobotHands.searchForMobiles();
+    this.productRobotEyes.assertSearchIcon();
+    this.productRobotHands.clickOnSearch();
+    this.productRobotEyes.assertMobileSearchWord();
 
-    this.mobilesRobotEyes.assertMobilesComponent();
-    this.mobilesRobotHands.scrollDown();
+    this.productRobotEyes.assertMobilesComponent();
+    this.productRobotHands.scrollDown();
   }
   public printMobileDetails() {
-    this.mobileDependency.printLastMobileDetails();
+    this.productDependency.printLastMobileDetails();
   }
 }
 const type = "s-search-result";
-export class MobileDependency extends Dependencies {
+export class ProductDependency extends Dependencies {
   printLastMobileDetails() {
     this.logLastCompTextByType(type, "a-text-normal");
   }
 }
-export class MobileRobotEyes extends RobotEyes {
+export class ProductRobotEyes extends RobotEyes {
   assertSearchBar() {
     this.seesIdVisible("twotabsearchtextbox");
   }
@@ -41,7 +41,7 @@ export class MobileRobotEyes extends RobotEyes {
   }
 }
 
-export class MobileRobotHands extends RobotHands {
+export class ProductRobotHands extends RobotHands {
   searchForMobiles() {
     this.typeTextonId("twotabsearchtextbox", "mobiles");
   }

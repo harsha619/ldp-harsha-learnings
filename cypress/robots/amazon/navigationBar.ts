@@ -1,11 +1,11 @@
 import { Dependencies, RobotEyes, RobotHands } from "./Robot";
 import data from "../../fixtures/example.json";
 
-export default class NavBarRobot {
+export default class NavigationBarRobot {
   private navBarRobotHands = new NavBarRobotHands();
   private navBarRobotEyes = new NavBarRobotEyes();
 
-  public navigation() {
+  public navigateToMobileCategory() {
     this.navBarRobotEyes.assertNavBar();
     this.navBarRobotHands.clickOnNavBar();
 

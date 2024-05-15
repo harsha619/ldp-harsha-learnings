@@ -1,5 +1,5 @@
 import LoginRobot from "../robots/amazon/authentication/login";
-import NavBarRobot from "../robots/amazon/navBar";
+import NavBarRobot from "../robots/amazon/navigationBar";
 import AccountDetails from "../robots/amazon/authentication/accountDetails";
 import HomePageRobot from "../robots/amazon/homePage";
 
@@ -17,9 +17,9 @@ context(
       });
       it("should check amazon login and account details ", () => {
         authenticationRobot.login();
-        navBarRobot.navigation();
+        navBarRobot.navigateToMobileCategory();
         navBarRobot.primeFilter();
-        accountRobot.myOrderPaymentList();
+        accountRobot.getOrderPaymentList();
       });
     });
   }
