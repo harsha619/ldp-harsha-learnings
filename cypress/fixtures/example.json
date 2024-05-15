@@ -1,0 +1,13 @@
+{
+  "name": "harsha",
+  "phone_no":"1234567890",
+  "pincode":"530027",
+  "address": "virat nagar",
+  "email": "8972872499",
+  "password":"Password@123",
+  "body": "Fixtures are a great way to mock data for responses to routes",
+  "base_url":"https://www.amazon.in/ref=nav_logo",
+  "amazon_title":"Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in",
+  
+
+}
