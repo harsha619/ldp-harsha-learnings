@@ -5,7 +5,7 @@ export default class AccountDetails {
   private accountDetailsRobotHands = new AccountDetailsRobotHands();
   private accountDetailsRobotEyes = new AccountDetailsRobotEyes();
 
-  public myList() {
+  public myOrderPaymentList() {
     this.accountDetailsRobotEyes.assertOrders();
     this.accountDetailsRobotHands.clickOnOrders();
 

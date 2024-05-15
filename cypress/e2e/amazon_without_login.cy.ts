@@ -5,16 +5,16 @@ import ItemCardRobot from "../robots/amazon/itemCard";
 import MobileRobot from "../robots/amazon/mobile";
 import NavBarRobot from "../robots/amazon/navBar";
 
-context("Search Test", () => {
-  const homePage = new HomePageRobot();
+context("This is a end to end testing for adding items into cart flow", () => {
+  const homePageRobot = new HomePageRobot();
   const dealsRobot = new DealsRobot();
   const itemCardRobot = new ItemCardRobot();
   const mobileRobot = new MobileRobot();
   const navBarRobot = new NavBarRobot();
-  describe("Search the required information", () => {
-    it("navigate to wikipedia page", () => {
-      homePage.startApp();
-      dealsRobot.deals();
+  describe("Adding item into cart", () => {
+    it("Should be able to add mobiles into cart", () => {
+      homePageRobot.openApp();
+      dealsRobot.getDeals();
       itemCardRobot.itemCard();
       itemCardRobot.addToCart();
       itemCardRobot.checkQuantityInShoppingCart();
@@ -22,6 +22,7 @@ context("Search Test", () => {
       mobileRobot.printMobileDetails();
       navBarRobot.navigation();
       navBarRobot.filterCheckBox();
+      navBarRobot.mainMenu();
     });
   });
 });

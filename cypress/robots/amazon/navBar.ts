@@ -22,6 +22,10 @@ export default class NavBarRobot {
     this.navBarRobotEyes.assertPrimeCheckBox();
     this.navBarRobotHands.clickPrimeCheckBox();
   }
+  public mainMenu() {
+    this.navBarRobotEyes.assertMainMenu();
+    this.navBarRobotHands.clickOnMainMenu();
+  }
 }
 export class NavBarDependency extends Dependencies {}
 export class NavBarRobotEyes extends RobotEyes {
@@ -40,6 +44,9 @@ export class NavBarRobotEyes extends RobotEyes {
   assertPrimeCheckBox() {
     this.seesIdVisible("apb-browse-refinements-checkbox_1");
   }
+  assertMainMenu() {
+    this.seesIdVisible("nav-logo-sprites");
+  }
 }
 
 export class NavBarRobotHands extends RobotHands {
@@ -57,5 +64,8 @@ export class NavBarRobotHands extends RobotHands {
   }
   clickBrandCheckBox() {
     this.checkById("apb-browse-refinements-checkbox_4");
+  }
+  clickOnMainMenu() {
+    this.clickOnId("nav-logo-sprites");
   }
 }

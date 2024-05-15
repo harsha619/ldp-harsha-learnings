@@ -5,13 +5,14 @@ export default class DealsRobot {
   private dealsRobotHands = new DealsRobotHands();
   private dealsRobotEyes = new DealsRobotEyes();
 
-  public deals() {
+  public getDeals() {
     this.dealsRobotEyes.assertDeals();
     this.dealsRobotHands.clickDeals();
     this.dealsRobotEyes.assertDealsPage();
     this.dealsRobotEyes.assertDealsContainer();
     this.dealsRobotEyes.assertDealItems();
     this.dealsRobotHands.clickOnThirdItem();
+    this.dealsRobotEyes.assertLisOfProducts();
   }
 }
 
@@ -29,6 +30,9 @@ export class DealsRobotEyes extends RobotEyes {
   }
   assertDealItems() {
     this.seeTestIdByLength("deal-card", 2);
+  }
+  assertLisOfProducts() {
+    this.seeItemListVisible();
   }
 }
 

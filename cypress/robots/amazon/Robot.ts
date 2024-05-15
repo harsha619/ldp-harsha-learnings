@@ -82,6 +82,16 @@ export class RobotEyes extends BaseEyes {
   seeByDataCardIdentifier(id: string) {
     cy.get(`[data-card-identifier='${id}']`).click();
   }
+  seeItemListVisible() {
+    cy.get("body").then((body) => {
+      if (body.find("input#add-to-cart-button").length == 0) {
+        cy.get(
+          "#octopus-dlp-asin-stream > .a-unordered-list > :nth-child(1) > .a-list-item"
+        ).click();
+      }
+    });
+    return this;
+  }
 }
 
 export class RobotHands extends BaseHands {

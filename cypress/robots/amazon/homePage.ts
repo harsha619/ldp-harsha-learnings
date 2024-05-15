@@ -6,7 +6,7 @@ export default class HomePageRobot {
   private homePageRobotEyes = new HomePageEyes();
   private homePageDependency = new Dependencies();
 
-  public startApp() {
+  public openApp() {
     this.homePageDependency.accessUrl(data.base_url);
     this.homePageRobotEyes.seeURL();
     this.homePageRobotEyes.seeTitle(data.amazon_title);
