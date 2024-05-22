@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Amazon-Assignment" >
+    <parameter name="BASE_URL" value="https://www.amazon.in"></parameter>
+    <test name="withoutLogin">
+        <classes>
+            <class name="com.amazon.WithoutLoginFlow">
+            </class>
+
+        </classes>
+    </test>
+<!--    <test name="withlogin">-->
+<!--        <classes>-->
+<!--            <class name="com.amazon.LoginFlow"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+</suite>
