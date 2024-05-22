@@ -5,6 +5,8 @@ import com.amazon.PageObjects.DealsPage;
 import com.amazon.PageObjects.CartPage;
 import com.amazon.PageObjects.NavigationPage;
 import com.amazon.PageObjects.ProductPage;
+import net.bytebuddy.build.Plugin;
+import org.checkerframework.checker.signature.qual.PrimitiveType;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,6 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -22,19 +25,19 @@ public class WithoutLoginFlow {
     private static final Logger log = LoggerFactory.getLogger(WithoutLoginFlow.class);
     WebDriver driver;
     @Parameters({"BASE_URL"})
-    @BeforeSuite
+    @BeforeTest
     public void setUp(String url) {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
          driver.get(url);
     }
 
-    @Test()
-    public void startApp() throws InterruptedException {
+    @Test(priority = 1)
+    public void addingItemToCart() throws InterruptedException {
 
         String title="Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in";
 
-        Assert.assertEquals(driver.getTitle(),"Amazon.in");
+        Assert.assertEquals(driver.getTitle(),title);
         DealsPage dealsPage = new DealsPage(driver);
         CartPage cartPage = new CartPage(driver);
         Assert.assertTrue(driver.findElement(By.cssSelector("a[href='/deals?ref_=nav_cs_gb']")).isDisplayed());
@@ -46,12 +49,9 @@ public class WithoutLoginFlow {
         Select select= new Select(driver.findElement(By.id("quantity")));
         log.info("checking the cart quantity");
         Assert.assertEquals(select.getFirstSelectedOption().getText(),"1");
-        Thread.sleep(10000);
-        driver.close();
     }
-    @Test
+    @Test(priority = 2)
     public  void mobileSearch() throws InterruptedException {
-        CartPage cartPage = new CartPage(driver);
         ProductPage productPage= new ProductPage(driver);
         NavigationPage navigationPage= new NavigationPage(driver);
         productPage.searchForProduct();

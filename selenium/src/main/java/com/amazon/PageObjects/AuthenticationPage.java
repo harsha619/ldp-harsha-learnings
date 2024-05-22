@@ -47,12 +47,16 @@ public class AuthenticationPage extends AbstractComponent {
     }
 
     public void verifyOtp() throws InterruptedException {
-        if (otpCode.isDisplayed()) {
-            log.info("Enter otp");
-            Thread.sleep(20000);
-            otpSignInBtn.click();
-
+        try {
+            if (otpCode.isDisplayed()) {
+                log.info("Enter otp");
+                Thread.sleep(20000);
+                otpSignInBtn.click();
+            }
         }
+        catch(Exception e){
+            log.info("skipped otp verification");
+        };
 
     }
 }

@@ -36,6 +36,9 @@ public class MyAccountPage extends AbstractComponent {
     @FindBy(css = "[aria-labelledby='address-ui-widgets-form-submit-button-announce']")
     private WebElement addressSubmitBtn;
 
+    @FindBy(xpath = "//select[@name='address-ui-widgets-enterAddressStateOrRegion']")
+    private  WebElement selectState;
+
     public MyAccountPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
@@ -79,9 +82,10 @@ public class MyAccountPage extends AbstractComponent {
         phoneNumber.sendKeys(properties.getProperty("PHONE_NUMBER"));
         pinCode.sendKeys(properties.getProperty("PIN_CODE"));
         address.sendKeys(properties.getProperty("ADDRESS"));
+        log.info("waiting for state");
+        waitForCityName(selectState,"ANDHRA PRADESH");
+        log.info("clicking on add address");
         addressSubmitBtn.click();
-
-
     }
 
 
