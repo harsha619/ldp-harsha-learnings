@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "default": {},
+  "title": "Root Schema",
+  "required": [
+    "id",
+    "parent_id",
+    "order",
+    "color",
+    "name",
+    "comment_count",
+    "is_shared",
+    "is_favorite",
+    "is_inbox_project",
+    "is_team_inbox",
+    "url",
+    "view_style"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "default": "",
+      "title": "The id Schema",
+      "examples": [
+        "2333699318"
+      ]
+    },
+    "parent_id": {
+      "type": "null",
+      "default": null,
+      "title": "The parent_id Schema",
+      "examples": [
+        null
+      ]
+    },
+    "order": {
+      "type": "integer",
+      "default": 0,
+      "title": "The order Schema",
+      "examples": [
+        0
+      ]
+    },
+    "color": {
+      "type": "string",
+      "default": "",
+      "title": "The color Schema",
+      "examples": [
+        "charcoal"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "default": "",
+      "title": "The name Schema",
+      "examples": [
+        "Inbox"
+      ]
+    },
+    "comment_count": {
+      "type": "integer",
+      "default": 0,
+      "title": "The comment_count Schema",
+      "examples": [
+        0
+      ]
+    },
+    "is_shared": {
+      "type": "boolean",
+      "default": false,
+      "title": "The is_shared Schema",
+      "examples": [
+        false
+      ]
+    },
+    "is_favorite": {
+      "type": "boolean",
+      "default": false,
+      "title": "The is_favorite Schema",
+      "examples": [
+        false
+      ]
+    },
+    "is_inbox_project": {
+      "type": "boolean",
+      "default": false,
+      "title": "The is_inbox_project Schema",
+      "examples": [
+        true
+      ]
+    },
+    "is_team_inbox": {
+      "type": "boolean",
+      "default": false,
+      "title": "The is_team_inbox Schema",
+      "examples": [
+        false
+      ]
+    },
+    "url": {
+      "type": "string",
+      "default": "",
+      "title": "The url Schema",
+      "examples": [
+        "https://todoist.com/showProject?id=2333699318"
+      ]
+    },
+    "view_style": {
+      "type": "string",
+      "default": "",
+      "title": "The view_style Schema",
+      "examples": [
+        "list"
+      ]
+    }
+  },
+  "examples": [
+    {
+      "id": "2333699318",
+      "parent_id": null,
+      "order": 0,
+      "color": "charcoal",
+      "name": "Inbox",
+      "comment_count": 0,
+      "is_shared": false,
+      "is_favorite": false,
+      "is_inbox_project": true,
+      "is_team_inbox": false,
+      "url": "https://todoist.com/showProject?id=2333699318",
+      "view_style": "list"
+    }
+  ]
+}
