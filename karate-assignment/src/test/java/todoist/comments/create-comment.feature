@@ -33,5 +33,15 @@ Feature: Create comment
     * testData.setCommentId(response.id)
     * match response.content == content
 
+  Scenario: Add new comment to without  request body
+    Given path 'comments'
+    And header Authorization = 'Bearer ' + ACCESS_TOKEN
+    And header Content-Type = 'application/json'
+
+    When method post
+    Then status 400
+
+
+
 
 

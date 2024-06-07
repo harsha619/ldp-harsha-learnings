@@ -1,4 +1,4 @@
-@allSections
+@getAllSections
 Feature: Get all the list of sections
   Background: Set URL
     * url BASE_URL

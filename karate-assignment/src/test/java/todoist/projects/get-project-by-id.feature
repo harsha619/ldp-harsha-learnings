@@ -1,3 +1,4 @@
+@getProjectById
 Feature: Get  project
   Background: Set URL
     * url BASE_URL

@@ -25,4 +25,11 @@ Feature: Create comment
     * testData.setLabelId(response.id)
     * match response.name == name
 
+  Scenario: Add new label without  request body
+    Given path 'labels'
+    And header Authorization = 'Bearer ' + ACCESS_TOKEN
+    And header Content-Type = 'application/json'
+
+    When method post
+    Then status 400
 

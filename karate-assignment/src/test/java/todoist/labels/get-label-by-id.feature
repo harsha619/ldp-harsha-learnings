@@ -1,4 +1,4 @@
-@allComments
+@getLabelById
 Feature: Get label by id
   Background: Set URL
     * url BASE_URL

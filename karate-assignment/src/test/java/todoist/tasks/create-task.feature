@@ -22,6 +22,13 @@ Feature: Create task
     * testData.setTaskId(response.id)
     * match response.content == contentName
     * match response == "#object"
+  Scenario: Add new task without  request body
+    Given path 'tasks'
+    And header Authorization = 'Bearer ' + ACCESS_TOKEN
+    And header Content-Type = 'application/json'
+
+    When method post
+    Then status 400
 
 
 

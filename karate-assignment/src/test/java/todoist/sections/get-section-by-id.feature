@@ -19,4 +19,3 @@ Feature: Get section by id
     * print 'jsonData:', jsonData
     * def SchemaUtils = Java.type("todoist.utils.JSONSchemaUtil")
     * assert SchemaUtils.isValid(jsonData,jsonSchemaExpected)
-  #    * call read('update-section.feature')

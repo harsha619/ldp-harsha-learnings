@@ -1,4 +1,4 @@
-@allProjects
+@getAllProjects
 Feature: Get all the list of projects
   Background: Set URL
     * url BASE_URL

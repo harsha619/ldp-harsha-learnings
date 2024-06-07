@@ -27,3 +27,10 @@ Feature: Create section
     * print 'jsonData:', jsonData
     * def SchemaUtils = Java.type("todoist.utils.JSONSchemaUtil")
     * assert SchemaUtils.isValid(jsonData,jsonSchemaExpected)
+  Scenario: Add new section without  request body
+    Given path 'sections'
+    And header Authorization = 'Bearer ' + ACCESS_TOKEN
+    And header Content-Type = 'application/json'
+
+    When method post
+    Then status 400

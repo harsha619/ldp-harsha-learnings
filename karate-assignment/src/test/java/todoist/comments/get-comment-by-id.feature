@@ -1,4 +1,4 @@
-@commentById
+@getCommentById
 Feature: Get all the list of comments
   Background: Set URL
     * url BASE_URL

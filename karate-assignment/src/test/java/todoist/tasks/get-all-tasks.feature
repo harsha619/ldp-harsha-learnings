@@ -1,4 +1,4 @@
-@allTask
+@getAllTasks
 Feature: Get all the list of tasks
   Background: Set URL
     * url BASE_URL

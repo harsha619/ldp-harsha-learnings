@@ -1,4 +1,4 @@
-@allLabel
+@getAllLabel
 Feature: Get all the list of label
   Background: Set URL
     * url BASE_URL
