@@ -14,8 +14,6 @@ Feature: Get all the list of projects
 
     * string jsonSchemaExpected = read("file:src/test/java/todoist/projects/schema/project.json")
     * string jsonData = response[0]
-    * print 'jsonData:', jsonData
     * def SchemaUtils = Java.type("todoist.utils.JSONSchemaUtil")
     * assert SchemaUtils.isValid(jsonData,jsonSchemaExpected)
-  #    * def result = call read('create-project.feature')
 

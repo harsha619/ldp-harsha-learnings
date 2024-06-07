@@ -26,7 +26,7 @@ Feature: Update project
     * print 'jsonData:', jsonData
     * def SchemaUtils = Java.type("todoist.utils.JSONSchemaUtil")
     * assert SchemaUtils.isValid(jsonData,jsonSchemaExpected)
-  #    * def result = call read('get-project.feature')
+  #    * def result = call read('get-project-by-id.feature')
 
 
 

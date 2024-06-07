@@ -27,7 +27,6 @@ Feature: Create project
     * print 'jsonData:', jsonData
     * def SchemaUtils = Java.type("todoist.utils.JSONSchemaUtil")
     * assert SchemaUtils.isValid(jsonData,jsonSchemaExpected)
-  #    * def result = call read('get-project.feature')
 
 
 

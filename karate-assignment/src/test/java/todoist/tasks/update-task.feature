@@ -22,7 +22,6 @@ Feature: Update section
     * testData.setTaskId(response.id)
     * match response.content == contentName
     * match response == "#object"
-  #    * def result = call read('section-by-id.feature')
 
 
 
