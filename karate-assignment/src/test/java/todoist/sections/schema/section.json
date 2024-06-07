@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "default": {},
+  "title": "Root Schema",
+  "required": [
+    "id",
+    "project_id",
+    "order",
+    "name"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "default": "",
+      "title": "The id Schema",
+      "examples": [
+        "7025"
+      ]
+    },
+    "project_id": {
+      "type": "string",
+      "default": "",
+      "title": "The project_id Schema",
+      "examples": [
+        "2203306141"
+      ]
+    },
+    "order": {
+      "type": "integer",
+      "default": 0,
+      "title": "The order Schema",
+      "examples": [
+        1
+      ]
+    },
+    "name": {
+      "type": "string",
+      "default": "",
+      "title": "The name Schema",
+      "examples": [
+        "Groceries"
+      ]
+    }
+  },
+  "examples": [
+    {
+      "id": "7025",
+      "project_id": "2203306141",
+      "order": 1,
+      "name": "Groceries"
+    }
+  ]
+}

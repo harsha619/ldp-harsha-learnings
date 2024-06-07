@@ -1,0 +1,257 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "default": {},
+  "title": "Root Schema",
+  "required": [
+    "id",
+    "assigner_id",
+    "assignee_id",
+    "project_id",
+    "section_id",
+    "parent_id",
+    "order",
+    "content",
+    "description",
+    "is_completed",
+    "labels",
+    "priority",
+    "comment_count",
+    "creator_id",
+    "created_at",
+    "due",
+    "url",
+    "duration"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "default": "",
+      "title": "The id Schema",
+      "examples": [
+        "8057799545"
+      ]
+    },
+    "assigner_id": {
+      "type": "null",
+      "default": null,
+      "title": "The assigner_id Schema",
+      "examples": [
+        null
+      ]
+    },
+    "assignee_id": {
+      "type": "null",
+      "default": null,
+      "title": "The assignee_id Schema",
+      "examples": [
+        null
+      ]
+    },
+    "project_id": {
+      "type": "string",
+      "default": "",
+      "title": "The project_id Schema",
+      "examples": [
+        "2333699318"
+      ]
+    },
+    "section_id": {
+      "type": "null",
+      "default": null,
+      "title": "The section_id Schema",
+      "examples": [
+        null
+      ]
+    },
+    "parent_id": {
+      "type": "null",
+      "default": null,
+      "title": "The parent_id Schema",
+      "examples": [
+        null
+      ]
+    },
+    "order": {
+      "type": "integer",
+      "default": 0,
+      "title": "The order Schema",
+      "examples": [
+        12
+      ]
+    },
+    "content": {
+      "type": "string",
+      "default": "",
+      "title": "The content Schema",
+      "examples": [
+        "Buy Milk"
+      ]
+    },
+    "description": {
+      "type": "string",
+      "default": "",
+      "title": "The description Schema",
+      "examples": [
+        ""
+      ]
+    },
+    "is_completed": {
+      "type": "boolean",
+      "default": false,
+      "title": "The is_completed Schema",
+      "examples": [
+        false
+      ]
+    },
+    "labels": {
+      "type": "array",
+      "default": [],
+      "title": "The labels Schema",
+      "items": {},
+      "examples": [
+        []
+      ]
+    },
+    "priority": {
+      "type": "integer",
+      "default": 0,
+      "title": "The priority Schema",
+      "examples": [
+        4
+      ]
+    },
+    "comment_count": {
+      "type": "integer",
+      "default": 0,
+      "title": "The comment_count Schema",
+      "examples": [
+        0
+      ]
+    },
+    "creator_id": {
+      "type": "string",
+      "default": "",
+      "title": "The creator_id Schema",
+      "examples": [
+        "49353772"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "default": "",
+      "title": "The created_at Schema",
+      "examples": [
+        "2024-06-06T05:39:06.182479Z"
+      ]
+    },
+    "due": {
+      "type": "object",
+      "default": {},
+      "title": "The due Schema",
+      "required": [
+        "date",
+        "string",
+        "lang",
+        "is_recurring",
+        "datetime"
+      ],
+      "properties": {
+        "date": {
+          "type": "string",
+          "default": "",
+          "title": "The date Schema",
+          "examples": [
+            "2024-06-07"
+          ]
+        },
+        "string": {
+          "type": "string",
+          "default": "",
+          "title": "The string Schema",
+          "examples": [
+            "tomorrow at 12:00"
+          ]
+        },
+        "lang": {
+          "type": "string",
+          "default": "",
+          "title": "The lang Schema",
+          "examples": [
+            "en"
+          ]
+        },
+        "is_recurring": {
+          "type": "boolean",
+          "default": false,
+          "title": "The is_recurring Schema",
+          "examples": [
+            false
+          ]
+        },
+        "datetime": {
+          "type": "string",
+          "default": "",
+          "title": "The datetime Schema",
+          "examples": [
+            "2024-06-07T12:00:00"
+          ]
+        }
+      },
+      "examples": [
+        {
+          "date": "2024-06-07",
+          "string": "tomorrow at 12:00",
+          "lang": "en",
+          "is_recurring": false,
+          "datetime": "2024-06-07T12:00:00"
+        }
+      ]
+    },
+    "url": {
+      "type": "string",
+      "default": "",
+      "title": "The url Schema",
+      "examples": [
+        "https://todoist.com/app/task/8057799545"
+      ]
+    },
+    "duration": {
+      "type": "null",
+      "default": null,
+      "title": "The duration Schema",
+      "examples": [
+        null
+      ]
+    }
+  },
+  "examples": [
+    {
+      "id": "8057799545",
+      "assigner_id": null,
+      "assignee_id": null,
+      "project_id": "2333699318",
+      "section_id": null,
+      "parent_id": null,
+      "order": 12,
+      "content": "Buy Milk",
+      "description": "",
+      "is_completed": false,
+      "labels": [],
+      "priority": 4,
+      "comment_count": 0,
+      "creator_id": "49353772",
+      "created_at": "2024-06-06T05:39:06.182479Z",
+      "due": {
+        "date": "2024-06-07",
+        "string": "tomorrow at 12:00",
+        "lang": "en",
+        "is_recurring": false,
+        "datetime": "2024-06-07T12:00:00"
+      },
+      "url": "https://todoist.com/app/task/8057799545",
+      "duration": null
+    }
+  ]
+}

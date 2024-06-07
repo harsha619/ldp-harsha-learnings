@@ -1,0 +1,26 @@
+{
+  "creator_id": "#string",
+  "created_at": "#string",
+  "assignee_id": "#null | #string",
+  "assigner_id": "#null | #string",
+  "comment_count": "#number",
+  "is_completed": "#boolean",
+  "content": "#string",
+  "description": "#string",
+  "due": {
+    "date": "#string",
+    "is_recurring": "#boolean",
+    "datetime": "#string",
+    "string": "#string",
+    "lang": "#string"
+  },
+  "duration": "#null",
+  "id": "#string",
+  "labels": "#array",
+  "order": "#number",
+  "priority": "#number",
+  "project_id": "#string",
+  "section_id": "#null | #string",
+  "parent_id": "#string",
+  "url": "#string"
+}
