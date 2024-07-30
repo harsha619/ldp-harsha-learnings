@@ -1,0 +1,6 @@
+---
+- name: using roles
+  hosts:  web_hosts
+  roles: 
+   - httpd
+   - docker
