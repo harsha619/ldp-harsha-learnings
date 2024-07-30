@@ -1,0 +1,24 @@
+---
+- name: Install multiple services
+  hosts: all
+  
+  tasks:
+    - name: Install necessary packages
+      apt:
+        name: "{{ item }}"
+        state: present
+        update_cache: yes
+      loop:
+        - apache2
+        - maven
+        - openjdk-11-jdk
+        - docker.io
+
+    - name: Ensure services are started and enabled
+      systemd:
+        name: "{{ item }}"
+        state: started
+        enabled: yes
+      loop:
+        - apache2
+        - docker
