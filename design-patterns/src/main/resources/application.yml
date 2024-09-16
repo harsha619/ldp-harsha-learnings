@@ -1,0 +1,24 @@
+server:
+  port: 9005
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/sso_integration?user=root
+    userName: root
+    password: sql1@
+  globalcors:
+    corsConfigurations:
+      '[/**]':
+        allowedOrigins: "*"
+        allowedHeaders: "*"
+        allowedMethods: "*"
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+      properties:
+        hibernate:
+          format_sql: true
+Jwt:
+  secret: "eafdhgjhj"
+  message: 'Logged in Successfully'
